@@ -150,7 +150,7 @@ Farmers frame financial questions in practical, outcome-driven language. Common 
 ## Files in This Contribution
 
 ```
-your_name_analysis/
+Precious Enahoro/
 ├── README.md (this file)
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
@@ -160,15 +160,15 @@ your_name_analysis/
 │   ├── data_loader.py
 │   ├── preprocessing.py
 │   └── visualization.py
-├── visualizations/
+├── key-findings-visualizations/
 │   ├── viz1.png
 │   ├── viz2.png
 │   └── viz3.png
 ├── results/
 │   ├── summary_statistics.csv
 │   └── findings.md
-└── data/ (if applicable - only small derived datasets)
-    └── processed_sample.csv
+└── tableau/ (if applicable - only small derived datasets)
+    └── Tableau Public Link.md
 ```
 
 ## Dependencies
