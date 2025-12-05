@@ -6,17 +6,21 @@ The goal of the analyses here was to generate a predictive model to anticipate f
 
 This is a random forest classifier model. A few weather-related features (minimum temp, maximum temp, precipitation, and relative humidity) are used to predict the topics of the questions that farmers asked. Predictions will generate a prediction for one of 11 question topics that appeared in the We Farm dataset: 'bean', 'cattle', 'chicken', 'coffee', 'goat', 'maize', 'pig', 'potato', 'poultry', 'rabbit', and 'tomato'.
 
-## How well did weather predict question topic?
-
-
-
 ## Why these 11 topics?
 
-Topics were chosen to be useful while also work within a weather model. All of the chosen topics made up at least 2% of total questions in the dataset, and collectively these topics accounted for ~65% of all questions. Rarer topics would have been difficult to including due to having less data than the other topics. A small number of common topics were also excluded either because the model could not connect the weather data to the topic, or because the qusetions under that topic were broad enough to make it less helpful.
+Topics were chosen to be useful while also work within this weather model. All of the chosen topics made up at least 2% of total questions in the dataset, and collectively these topics accounted for ~65% of all questions. Rarer topics would have been difficult to including due to having less data than the other topics (both over- and under-sampling techniques were tested, but neither improved the model). A small number of common topics were also excluded either because the model could not connect the weather data to the topic, or because the qusetions under that topic were broad enough to make it less helpful (e.g., 'plant', 'crop', or 'animal'). For similar reasons, the model does not include any engineered 'miscellaneous' topics made from the rarer topics.
+
+## How well did weather predict question topic?
+
+The model achieved a modest F1 score of 0.19. Associations between the weather features used and the topics were generally weak, with the strongest Pearson correlation observed between any weather feature and an individual topic being 0.12.
+
+While the model generates a prediction better than chance guessing among these topics, outputs should be taken as suggestions of what to anticipate rather than authoritative guidance.
 
 ## Future directions
 
-Stronger relationships would maybe be found between weather and question topic using daily weather data.
+Stronger relationships would maybe be found between weather and question topic using daily or weekly weather data. The weather data used here were from monthly averages/total in these countries.
+
+Question topics should also be examined further, if possible. Exploration of the data suggests some labels are frequently a poor fit for their question content. For example, many of the questions under the topic 'camel' are actually about a bacterial disease affecting bananas, and while 'pigeon' does contain some questions related to the bird many are completely unrelated. Other topics may benefit from more sophisticated parsing; 'cat', for example, includes questions about cats, about also cat fish and caterpillers.
 
 ## Python packages used in model
 
