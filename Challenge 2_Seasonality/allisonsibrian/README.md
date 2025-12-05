@@ -11,7 +11,7 @@ This project analyzes the seasonality of farmers' questions across Kenya, Uganda
 ## Methodology
 
 ### Data Sources
-- - Producers Direct Dataset: Obtained de-duplicated farmer questions split by language (English, Swahili, Luganda, Runyankole).
+- Producers Direct Dataset: Obtained de-duplicated farmer questions split by language (English, Swahili, Luganda, Runyankole).
 - ERA5 Climate Reanalysis Data: Monthly aggregates for Total Precipitation (prcp), Maximum Temperature (tasmax), and Minimum Temperature (tasmin) for Kenya, Uganda, and Tanzania.
 
 ### Approach
@@ -110,11 +110,11 @@ This heatmap displays the Top 10 word frequencies per region, identifying distin
 ## Next Steps and Recommendations
 
 ### For Further Analysis
-1. **Recommendation 1**: Improve upon translation by utilizing stronger translation models validated by local users to reduce noise, and implement Topic Modeling (LDA) to identify any themes that stick out.
-2. **Recommendation 2**: Expand analysis to utilize the whole dataset instead of the current 0.5% translated samples and whole English dataset.
+1. Improve upon translation by utilizing stronger translation models validated by local users to reduce noise, and implement Topic Modeling (LDA) to identify any themes that stick out.
+2. Expand analysis to utilize the whole dataset instead of the current 0.5% translated samples and whole English dataset.
 
 ### For Producers Direct
-1. **Action 1**: Data shows question volume peaks during the harvest and transition periods rather than the primary planting season. Producer's Direct should investigate questions during this season and be ready to prioritize post-harvest handling and second-season preparation to meet farmers' needs.
+1. Data shows question volume peaks during the harvest and transition periods rather than the primary planting season. Producer's Direct should investigate questions during this season and be ready to prioritize post-harvest handling and second-season preparation to meet farmers' needs.
 
 ## Contact and Collaboration
 

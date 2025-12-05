@@ -15,7 +15,7 @@ Note: Due to the massive dataset size (21M rows), this analysis was conducted on
 ### Data Sources
 - Producers Direct Dataset: Obtained de-duplicated farmer questions split by language (English, Swahili, Luganda, Runyankole).
 - ERA5 Climate Reanalysis Data: Monthly aggregates for Total Precipitation (prcp), Maximum Temperature (tasmax), and Minimum Temperature (tasmin) for Kenya, Uganda, and Tanzania.
-- Global Historical Climatology Network daily (GHCNd): Ground station data (GHCNd) was explored during the initial phase but excluded from the final analysis. EDA revealed that weather stations for the countries would stop recording data. To ensure consistent and reliable data I opted to use ERA5 data in my analysis.
+- Global Historical Climatology Network daily (GHCNd): Ground station data (GHCNd) was explored during the initial phase but excluded from the final analysis. EDA revealed that weather stations would sometimes stop recording data, creating an inconsistent dataset. To ensure consistent and reliable data, I opted to use ERA5 data in my analysis.
 
 ### Approach
 1. **Step 1**: Data processing, loading, and initial exploration
@@ -44,14 +44,15 @@ The model identified 1-month Lagged Rainfall as significantly more predictive th
 - To improve on this pest and disease alert system, this model can be refined to use weekly aggregations and intake more data if there are no computational constraints for analysis.
 
 ### Strong Predictive Success for 'Pests & Disease' and 'Market' Topics
-The model for "Pests & Disease" questions achieved a positive R^2 score (0.18) and a "Strong" performance rating, meaning that the test RMSE was lower than the standard deviation of the test set
+The model for "Pests & Disease" questions achieved a positive R^2 score (0.18), meaning weather patterns explain 18% of the variance in 'P & D' questions.
 
-'Pest & Disease' RMSE: 18.90
-'Market' RMSE: 22.31
+- The model achieved a "Strong" performance rating for 'Pest & Disease' and 'Market' topics, meaning that the prediction error (RMSE) was lower than the standard deviation of the test set.
+- 'Pest & Disease' RMSE: 18.90
+- 'Market' RMSE: 22.31
 
 **Implications for Producers Direct:**
-- There is a strong confidence in using the model for predicting these topics, and this model can be used to further refine this model by incorporating weekly aggregation and regional data, which can eventually be used for future automated systems.
--  Livestock and Crop questions showed higher variance, suggesting they are driven by non-weather factors.
+- There is a strong confidence in using the model as a baseline for predicting these topics. This model can be built upon and refined by incorporating weekly aggregation and regional data, which can eventually be used for future alert automated systems.
+- Livestock and Crop questions showed higher variance; the weather model struggled to capture these fluctuations. Further investigations should be pursued to understand if these topics are driven by other factors (i.e, economic).
 
 ## Visualizations
 
@@ -105,4 +106,4 @@ I recommend incorporating regional data in the model, aggregating at a weekly le
 - Thanks to Bashir Alsuty for the de-duplicated data split by language files, and Steven Yan for the Comet Scores on translation models for Swahili, Luganda, and Runyankole, as they were used in my pre-processing stage.
 ---
 
-**Last Updated**: November 28th, 2025
+**Last Updated**: December 4, 2025
